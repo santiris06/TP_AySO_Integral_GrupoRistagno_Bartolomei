@@ -1,0 +1,1 @@
+# TP_AySO_Integral_GrupoRistagno_Bartolomei
