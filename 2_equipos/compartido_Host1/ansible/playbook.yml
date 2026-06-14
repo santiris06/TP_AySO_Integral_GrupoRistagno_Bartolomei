@@ -1,8 +1,5 @@
 ---
-- hosts: 
-#  - all
-  - testing
-  - produccion
+- hosts: all
 
   # Variables Globales
   vars_files:
@@ -12,7 +9,9 @@
     - include_role:
         name: TP_INI
     
-    - name: "Otra tarea"
+    - name: "prueba ping"
+      ansible.builtin.ping:
+    - name: "otra prueba"
       debug:
         msg: "Despues de la ejecucion del rol"
 
