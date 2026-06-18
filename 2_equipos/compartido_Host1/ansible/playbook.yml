@@ -1,13 +1,13 @@
 
 - name: Ejecutar pruebas del Trabajo Práctico
   hosts: all
-  become: true  # Permite ejecutar como sudo (necesario para el rol si cambia owners)
+  become: true 
 
   vars_files:
-    - vars/main.yml  # Si usás variables globales desde este archivo
+    - vars/main.yml  
 
   vars:
-    Nombre_Grupo: "Grupo_7"  # Variable fija para el template de TP_INI
+    Nombre_Grupo: "Ristagno_bartolomei"  
 
   roles:
     - TP_INI
