@@ -1,0 +1,6 @@
+---
+# vars file for Instala-tools_Ristagno_bartolomei
+paquetes_tp:
+  - htop
+  - tmux
+  - speedtest-cli
