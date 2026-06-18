@@ -1,0 +1,29 @@
+---
+# tasks file for Alta_Usuarios
+
+- name: Obtener contraseña del  vagrant
+  ansible.builtin.getent:
+    database: shadow
+    key: vagrant
+
+- name: Asegurar que el grupo secundario exista
+  ansible.builtin.group:
+    name: "{{ Nombre_Grupo }}"
+    state: present
+
+- name: Asegurar que los grupos primarios existan
+  ansible.builtin.group:
+    name: "{{ item.grupo_primario }}"
+    state: present
+  loop: "{{ usuarios_grupo }}"
+
+- name: Crear los usuarios con sus respectivos grupos y contraseña
+  ansible.builtin.user:
+    name: "{{ item.username }}"
+    comment: "{{ item.comment }}"
+    group: "{{ item.grupo_primario }}"
+    groups: "{{ Nombre_Grupo }}"
+    append: true
+    password: "{{ ansible_facts.getent_shadow['vagrant'][0] }}"
+    state: present
+  loop: "{{ usuarios_grupo }}"

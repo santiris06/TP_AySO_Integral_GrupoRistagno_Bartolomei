@@ -1,0 +1,9 @@
+---
+# tasks file for Instala-tools_Ristagno_bartolomei
+
+- name: Instalar herramientas
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ paquetes_tp }}"
+  ignore_errors: true

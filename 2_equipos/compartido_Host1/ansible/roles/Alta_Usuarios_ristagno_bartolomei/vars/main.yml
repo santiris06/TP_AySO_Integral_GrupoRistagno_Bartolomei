@@ -1,0 +1,9 @@
+---
+# vars file for Alta_Usuarios
+usuarios_grupo:
+  - username: "sristagno"
+    comment: "Santiago Ristagno"
+    grupo_primario: "G_R1"
+  - username: "tbartolomei"
+    comment: "Tomas Bartolomei"
+    grupo_primario: "G_R2"

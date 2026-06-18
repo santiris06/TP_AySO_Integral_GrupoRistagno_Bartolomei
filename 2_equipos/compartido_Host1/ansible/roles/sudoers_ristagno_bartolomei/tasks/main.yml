@@ -1,0 +1,11 @@
+---
+# tasks file for Sudoers_Ristagno_bartolomei
+
+- name: Crear configuracion en sudoers.d para el grupo
+  ansible.builtin.template:
+    src: sudoers_grupo.j2
+    dest: "/etc/sudoers.d/{{ Nombre_Grupo }}"
+    owner: root
+    group: root
+    mode: '0440'
+    validate: '/usr/sbin/visudo -cf %s'

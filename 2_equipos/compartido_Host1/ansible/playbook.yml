@@ -11,8 +11,7 @@
 
   roles:
     - TP_INI
+    - Alta_Usuarios_ristagno_bartolomei
+    - Sudoers_Ristagno_bartolomei
+    - Instala-tools_Ristagno_bartolomei
 
-  tasks:
-    - name: "otra prueba"
-      debug:
-        msg: "Despues de la ejecucion del rol"  
