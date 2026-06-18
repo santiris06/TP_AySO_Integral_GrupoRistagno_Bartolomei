@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    web:
+        image: santiris06/tp-div_313_grupo_ristagno_bartolomei:latest
+        container_name: tp_nginx_container
+        ports:
+            - "8081:80"
+        volumes:
+            - /home/vagrant/compartido/docker/web/file:/usr/share/nginx/html/file

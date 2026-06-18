@@ -1,0 +1,15 @@
+#Archivo de ejemplo template ejecutado desde ansible escrito en jinja2
+#https://jinja.palletsprojects.com/en/3.0.x/
+
+
+
+Nombre Grupo: ristagno_bartolomei
+División: 313
+Fecha: {{ ansible_date_time.date }}
+—-------------------------
+Distribución: {{ ansible_distribution }}
+Cantidad de Cores: {{ ansible_processor_vcpus }}
+—-------------------------
+R1: Nombre:  santiago   Apellido: ristagno
+R2: Nombre: tomas    Apellido: bartolomei
+

@@ -1,17 +1,18 @@
----
-- hosts: all
 
-  # Variables Globales
+- name: Ejecutar pruebas del Trabajo Práctico
+  hosts: all
+  become: true  # Permite ejecutar como sudo (necesario para el rol si cambia owners)
+
   vars_files:
-    - vars/main.yml
+    - vars/main.yml  # Si usás variables globales desde este archivo
+
+  vars:
+    Nombre_Grupo: "Grupo_7"  # Variable fija para el template de TP_INI
+
+  roles:
+    - TP_INI
 
   tasks:
-    - include_role:
-        name: TP_INI
-    
-    - name: "prueba ping"
-      ansible.builtin.ping:
     - name: "otra prueba"
       debug:
-        msg: "Despues de la ejecucion del rol"
-
+        msg: "Despues de la ejecucion del rol"  
